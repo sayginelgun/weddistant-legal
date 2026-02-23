@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weddistant'a Davetlisin!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        function redirect() {
+            // URL'den kodu al (?code=ABC123)
+            const urlParams = new URLSearchParams(window.location.search);
+            const inviteCode = urlParams.get('code');
+            
+            if (!inviteCode) {
+                document.body.innerHTML = "Geçersiz davet kodu.";
+                return;
+            }
+
+            // Uygulama içi şema (Deep Link)
+            // Flutter'da tanımlayacağımız özel adres: weddistant://invite?code=...
+            const appLink = "weddistant://invite?code=" + inviteCode;
+            
+            // Mağaza Linkleri
+            const playStore = "https://play.google.com/store/apps/details?id=com.weddistant.app";
+            const appStore = "https://apps.apple.com/app/weddistant/id123456789";
+
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const isAndroid = /Android/i.test(navigator.userAgent);
+
+            // 1. Önce uygulamayı açmayı dene
+            window.location.href = appLink;
+
+            // 2. Eğer uygulama yoksa, 2 saniye sonra mağazaya yönlendir
+            setTimeout(function() {
+                if (isIOS) {
+                    window.location.href = appStore;
+                } else if (isAndroid) {
+                    window.location.href = playStore;
+                } else {
+                    // Masaüstü ise genel bir bilgi sayfasına gönder
+                    window.location.href = "https://weddistant.com";
+                }
+            }, 2000);
+        }
+    </script>
+</head>
+<body onload="redirect()">
+    <div style="text-align: center; padding-top: 50px; font-family: sans-serif;">
+        <h2>Weddistant'a Yönlendiriliyorsunuz...</h2>
+        <p>Uygulama açılmazsa mağazaya yönlendirileceksiniz.</p>
+    </div>
+</body>
+</html>
