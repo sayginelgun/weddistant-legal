@@ -6,41 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
         function redirect() {
-            // URL'den kodu al (?code=ABC123)
-            const urlParams = new URLSearchParams(window.location.search);
-            const inviteCode = urlParams.get('code');
-            
-            if (!inviteCode) {
-                document.body.innerHTML = "Geçersiz davet kodu.";
-                return;
+    const urlParams = new URLSearchParams(window.location.search);
+    const inviteCode = urlParams.get('code');
+    
+    if (!inviteCode) {
+        document.body.innerHTML = "<h2>Geçersiz davet kodu.</h2>";
+        return;
+    }
+
+    // XML'deki host="invite" tanımına tam uyum:
+    const appLink = "weddistant://invite?code=" + inviteCode;
+    const playStore = "https://play.google.com/store/apps/details?id=com.weddistant.app";
+    const appStore = "https://apps.apple.com/app/weddistant/id123456789";
+
+    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isAndroid = /Android/i.test(navigator.userAgent);
+
+    // 1. ANDROID İÇİN INTENT (En Garanti Yöntem)
+    if (isAndroid) {
+        // Intent yapısı: Uygulama varsa açar, yoksa S.browser_fallback_url'e gider.
+        const androidIntent = `intent://invite?code=${inviteCode}#Intent;scheme=weddistant;package=com.weddistant.app;S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
+        window.location.href = androidIntent;
+    } 
+    // 2. iOS İÇİN
+    else if (isIOS) {
+        // iOS'te doğrudan yönlendirme:
+        window.location.href = appLink;
+        
+        // Eğer uygulama açılmazsa 2.5 saniye sonra App Store'a at
+        setTimeout(function() {
+            if (!document.webkitHidden && !document.hidden) {
+                window.location.href = appStore;
             }
-
-            // Uygulama içi şema (Deep Link)
-            // Flutter'da tanımlayacağımız özel adres: weddistant://invite?code=...
-            const appLink = "weddistant://?code=" + inviteCode;
-            
-            // Mağaza Linkleri
-            const playStore = "https://play.google.com/store/apps/details?id=com.weddistant.app";
-            const appStore = "https://apps.apple.com/app/weddistant/id123456789";
-
-            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-            const isAndroid = /Android/i.test(navigator.userAgent);
-
-            // 1. Önce uygulamayı açmayı dene
-            window.location.href = appLink;
-
-            // 2. Eğer uygulama yoksa, 2 saniye sonra mağazaya yönlendir
-            setTimeout(function() {
-                if (isIOS) {
-                    window.location.href = appStore;
-                } else if (isAndroid) {
-                    window.location.href = playStore;
-                } else {
-                    // Masaüstü ise genel bir bilgi sayfasına gönder
-                    window.location.href = "https://weddistant.com";
-                }
-            }, 2000);
-        }
+        }, 2500);
+    } 
+    // 3. MASAÜSTÜ VEYA DİĞER
+    else {
+        window.location.href = "https://weddistant.com";
+    }
+}
     </script>
 </head>
 <body onload="redirect()">
@@ -49,5 +53,4 @@
         <p>Uygulama açılmazsa mağazaya yönlendirileceksiniz.</p>
     </div>
 </body>
-
 </html>
