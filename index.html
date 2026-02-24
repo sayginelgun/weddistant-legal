@@ -1,56 +1,151 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Weddistant'a Davetlisin!</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-        function redirect() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const inviteCode = urlParams.get('code');
-    
-    if (!inviteCode) {
-        document.body.innerHTML = "<h2>Geçersiz davet kodu.</h2>";
-        return;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weddistant | Your wedding assistant</title>
+    <style>
+        :root {
+            --primary-color: #4E342E;
+            --accent-color: #81C784;
+            --text-color: #2C1E1B;
+            --bg-color: #FBF8F6;
+        }
 
-    // XML'deki host="invite" tanımına tam uyum:
-    const appLink = "weddistant://invite?code=" + inviteCode;
-    const playStore = "https://play.google.com/store/apps/details?id=com.weddistant.app";
-    const appStore = "https://apps.apple.com/app/weddistant/id123456789";
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-    const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    const isAndroid = /Android/i.test(navigator.userAgent);
+        header {
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-    // 1. ANDROID İÇİN INTENT (En Garanti Yöntem)
-    if (isAndroid) {
-        // Intent yapısı: Uygulama varsa açar, yoksa S.browser_fallback_url'e gider.
-        const androidIntent = `intent://invite?code=${inviteCode}#Intent;scheme=weddistant;package=com.weddistant.app;S.browser_fallback_url=${encodeURIComponent(playStore)};end`;
-        window.location.href = androidIntent;
-    } 
-    // 2. iOS İÇİN
-    else if (isIOS) {
-        // iOS'te doğrudan yönlendirme:
-        window.location.href = appLink;
-        
-        // Eğer uygulama açılmazsa 2.5 saniye sonra App Store'a at
-        setTimeout(function() {
-            if (!document.webkitHidden && !document.hidden) {
-                window.location.href = appStore;
-            }
-        }, 2500);
-    } 
-    // 3. MASAÜSTÜ VEYA DİĞER
-    else {
-        window.location.href = "https://weddistant.com";
-    }
-}
-    </script>
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            max-width: 600px;
+            line-height: 1.6;
+            color: #6D4C41;
+        }
+
+        .download-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-disabled {
+            background-color: #E0E0E0;
+            color: #9E9E9E;
+            cursor: not-allowed;
+        }
+
+        .btn:hover:not(.btn-disabled) {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            padding: 40px 20px;
+            border-top: 1px solid #EFEBE9;
+            text-align: center;
+        }
+
+        .legal-links {
+            margin-bottom: 15px;
+        }
+
+        .legal-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .legal-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: #A1887F;
+        }
+    </style>
 </head>
-<body onload="redirect()">
-    <div style="text-align: center; padding-top: 50px; font-family: sans-serif;">
-        <h2>Weddistant'a Yönlendiriliyorsunuz...</h2>
-        <p>Uygulama açılmazsa mağazaya yönlendirileceksiniz.</p>
-    </div>
+<body>
+
+    <header>
+        <div class="logo">WedDistant</div>
+    </header>
+
+    <main>
+        <h1>Düğün Sürecinizi Birlikte Planlayın</h1>
+        <p>Mesafeler ne olursa olsun, bütçenizi ve hazırlıklarınızı eşinizle ortak yönetin. WedDistant çok yakında App Store ve Google Play'de!</p>
+
+        <div class="download-buttons">
+            <a href="#" class="btn btn-disabled">
+                <span>App Store</span>
+            </a>
+            <a href="#" class="btn btn-disabled">
+                <span>Google Play</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="legal-links">
+            <a href="privacy.html">Gizlilik Koşulları</a>
+            <a href="kvkk.html">Aydınlatma Metni (KVKK)</a>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Weddistant. Tüm hakları saklıdır.
+        </div>
+    </footer>
+
 </body>
 </html>
