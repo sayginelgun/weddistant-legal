@@ -5,46 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weddistant - Gizlilik Politikası</title>
     <style>
-        :root { --primary: #5D4037; --secondary: #8D6E63; --bg: #F5F0ED; --text: #4A3731; }
+        :root { --primary: #5D4037; --secondary: #8D6E63; --bg: #F5F0ED; --text: #4A3731; --danger: #D32F2F; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; color: var(--text); background-color: var(--bg); margin: 0; padding: 20px; }
         .container { max-width: 800px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h1 { color: var(--primary); border-bottom: 2px solid var(--bg); padding-bottom: 15px; font-weight: 300; }
-        h2 { color: var(--secondary); font-size: 1.2rem; margin-top: 30px; display: flex; align-items: center; }
+        h1 { color: var(--primary); border-bottom: 2px solid var(--bg); padding-bottom: 15px; font-weight: 300; text-align: center; }
+        h2 { color: var(--secondary); font-size: 1.2rem; margin-top: 30px; display: flex; align-items: center; border-left: 4px solid var(--secondary); padding-left: 15px; }
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
         .footer { text-align: center; margin-top: 40px; font-size: 0.8rem; color: #999; }
         .emoji { margin-right: 10px; }
+        .delete-btn { display: inline-block; padding: 15px 30px; background-color: var(--danger); color: white; text-decoration: none; border-radius: 12px; font-weight: bold; margin-top: 15px; transition: opacity 0.3s; }
+        .delete-btn:hover { opacity: 0.9; }
+        .note { background: #fff3f3; padding: 15px; border-radius: 10px; border-left: 4px solid var(--danger); font-size: 0.9rem; margin-top: 15px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1><span class="emoji">🔒</span>Gizlilik Politikası</h1>
-        <p><strong>Weddistant</strong> olarak gizliliğinize en az sizin kadar önem veriyoruz. 6698 sayılı KVKK kapsamında verilerinizin nasıl işlendiğine dair detaylar aşağıdadır:</p>
+        <p><strong>Weddistant</strong> olarak kişisel verilerinizin güvenliği bizim önceliğimizdir. 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) uyarınca hazırladığımız bu politika, uygulamamızı kullanırken paylaştığınız bilgilerin nasıl işlendiğini açıklar.</p>
         
-        <h2><span class="emoji">👤</span> Ne topluyoruz?</h2>
-        <p>Sadece isminiz, tercihiniz doğrultusunda eşinizin ismi, e-posta adresiniz, etkinliklerinizin düzenleneceği şehir ve tarih bilgilerini topluyoruz.</p>
-
-        <h2><span class="emoji">⚙️</span> Nasıl kullanıyoruz?</h2>
-        <p>Verileriniz sadece size özel bir kullanıcı deneyimi sunmak, hazırlık sürecini kişiselleştirmek ve uygulama içi bildirimleri yönetmek için kullanılır.</p>
-
-        <h2><span class="emoji">📸</span> Kamera ve Medya Erişimi</h2>
-        <p>Uygulama işlevselliği gereği (profil fotoğrafı güncelleme vb.) kamera ve galeri erişimi istenebilir:</p>
+        <h2><span class="emoji">👤</span> Hangi Verileri Topluyoruz?</h2>
+        <p>Uygulamamıza kayıt olduğunuzda veya kullandığınızda şu bilgiler işlenebilir:</p>
         <ul>
-            <li>Bu izinler sadece sizin onayınızla ve işlem anında kullanılır.</li>
-            <li>Kamera üzerinden canlı yayın veya gizli kayıt yapılmaz.</li>
-            <li>Erişilen medya içerikleri sadece kullanıcı profilini tamamlamak amacıyla sunucularımızda şifrelenmiş olarak tutulur.</li>
+            <li>Adınız ve isteğe bağlı olarak eşinizin adı.</li>
+            <li>E-posta adresiniz (hesap doğrulaması ve iletişim için).</li>
+            <li>Planladığınız etkinliklerin tarihi ve konumu (hava durumu tahmini ve planlama için).</li>
+            <li>Uygulama içinde oluşturduğunuz bütçe kayıtları ve kontrol listesi verileri.</li>
         </ul>
 
-        <h2><span class="emoji">🍪</span> Çerezler ve Yerel Depolama</h2>
-        <p>Uygulamamızın stabil çalışması için cihazınızdaki yerel depolama teknolojilerini kullanıyoruz. Bu kayıtlar reklam amaçlı takip yapmaz, sadece oturum yönetimi gibi teknik gereklilikler içindir.</p>
+        <h2><span class="emoji">⚙️</span> Verilerin Kullanım Amacı</h2>
+        <p>Verileriniz, yalnızca evlilik hazırlık sürecinizi kişiselleştirmek, bütçe takibinizi kolaylaştırmak ve hava durumu gibi akıllı tahmin özellikleri sunmak için kullanılır.</p>
 
-        <h2><span class="emoji">🚫</span> Paylaşım Politikamız</h2>
-        <p><strong>Kimseyle Paylaşmıyoruz:</strong> Verilerinizi üçüncü şahıslara, aracı kurumlara veya reklam verenlere asla satmıyoruz ve pazarlama amacıyla devretmiyoruz.</p>
+        <h2><span class="emoji">📸</span> Kamera ve Medya Erişimi</h2>
+        <p>Uygulama özelliklerinin (örneğin profil fotoğrafı güncelleme) tam olarak çalışabilmesi için cihazınızın kamerasına ve galerisine erişim izni gerekebilir:</p>
+        <ul>
+            <li><strong>Sınırlı Erişim:</strong> Kamera erişimi sadece işlem anında sizin onayınızla tetiklenir.</li>
+            <li><strong>Veri Güvenliği:</strong> Kamera üzerinden çekilen görseller sadece uygulamanın ilgili bölümünde kullanılmak üzere sunucularımızda şifrelenmiş olarak depolanır. Arka planda gizli kayıt veya takip yapılmaz.</li>
+        </ul>
 
-        <h2><span class="emoji">⚖️</span> Kontrol Sizde (Haklarınız)</h2>
-        <p>İstediğiniz zaman uygulama üzerinden hesabınızı silebilir veya <em>iletisim@weddistant.app</em> (örnektir) adresi üzerinden verilerinizin sistemimizden tamamen temizlenmesini talep edebilirsiniz.</p>
+        <h2><span class="emoji">🚫</span> Veri Paylaşımı</h2>
+        <p>Kişisel verileriniz hiçbir şekilde üçüncü şahıslara, pazarlama şirketlerine veya reklam verenlere satılmaz ve kiralanmaz.</p>
 
-        <p style="margin-top: 40px; font-style: italic; border-top: 1px solid #eee; pt-20;">Weddistant, verilerinizi en güncel güvenlik protokolleri ve SSL sertifikaları ile korur.</p>
+        <h2><span class="emoji">🗑️</span> Hesap ve Veri Silme Talebi</h2>
+        <p>Google Play Store politikaları gereği, hesabınızı ve verilerinizi silme hakkınız saklıdır. Bu işlemi iki şekilde yapabilirsiniz:</p>
+        
+        <ul>
+            <li><strong>Uygulama İçinden:</strong> Ayarlar bölümünde yer alan "Hesabımı Sil" seçeneği ile tüm verilerinizi anında silebilirsiniz.</li>
+            <li><strong>Web Üzerinden Talep:</strong> Eğer uygulamaya erişemiyorsanız, aşağıdaki butona tıklayarak bize bir talep e-postası gönderebilirsiniz:</li>
+        </ul>
+
+        <a href="mailto:iletisim@weddistant.app?subject=Hesap Silme Talebi&body=Merhaba, Weddistant üzerindeki hesabımın ve ilişkili tüm verilerimin (bütçe, planlama vb.) kalıcı olarak silinmesini talep ediyorum. Kayıtlı E-posta Adresim: " class="delete-btn">
+            🗑️ Hesabımı ve Verilerimi Sil
+        </a>
+
+        <div class="note">
+            <strong>Not:</strong> Silme talebiniz bize ulaştığında, yasal saklama yükümlülüğü bulunmayan tüm verileriniz 7 iş günü içerisinde sistemlerimizden kalıcı olarak temizlenecektir.
+        </div>
+
+        <p style="margin-top: 40px; font-style: italic; border-top: 1px solid #eee; padding-top: 20px;">Weddistant, en güncel şifreleme standartlarını kullanarak verilerinizi korumayı taahhüt eder.</p>
         
         <div class="footer">
             &copy; 2026 Weddistant. Tüm hakları saklıdır.
