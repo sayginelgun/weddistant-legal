@@ -1,55 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weddistant - Gizlilik Politikası</title>
+    <style>
+        :root { --primary: #5D4037; --secondary: #8D6E63; --accent: #A1887F; --bg: #F5F0ED; --text: #4A3731; --danger: #D32F2F; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; color: var(--text); background: linear-gradient(135deg, #F5F0ED 0%, #EFE5E0 100%); margin: 0; padding: 20px; min-height: 100vh; }
+        .container { max-width: 850px; margin: 40px auto; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); padding: 50px; border-radius: 30px; box-shadow: 0 20px 60px rgba(93, 64, 55, 0.1); border: 1px solid rgba(255,255,255,0.8); }
+        h1 { color: var(--primary); font-size: 2.5rem; font-weight: 300; text-align: center; margin-bottom: 40px; letter-spacing: -1px; }
+        h2 { color: var(--secondary); font-size: 1.3rem; margin-top: 35px; display: flex; align-items: center; font-weight: 600; }
+        h2::before { content: ''; width: 30px; height: 2px; background: var(--accent); margin-right: 15px; border-radius: 2px; }
+        p { margin-bottom: 20px; opacity: 0.9; }
+        ul { padding-left: 20px; list-style-type: none; }
+        li { margin-bottom: 12px; position: relative; padding-left: 25px; }
+        li::before { content: '✦'; position: absolute; left: 0; color: var(--accent); }
+        .delete-section { background: #FFF5F5; border-radius: 20px; padding: 30px; margin-top: 40px; border: 1px solid #FFE0E0; text-align: center; }
+        .delete-btn { display: inline-block; padding: 16px 35px; background: var(--danger); color: white; text-decoration: none; border-radius: 15px; font-weight: bold; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(211, 47, 47, 0.2); }
+        .delete-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(211, 47, 47, 0.3); opacity: 0.95; }
+        .footer { text-align: center; margin-top: 50px; font-size: 0.85rem; color: var(--accent); border-top: 1px solid rgba(0,0,0,0.05); padding-top: 30px; }
+        .emoji-header { font-size: 3rem; display: block; margin-bottom: 10px; }
+    </style>
+</head>
 <body>
     <div class="container">
-        <h1><span class="emoji">🔒</span>Gizlilik Politikası ve Aydınlatma Metni</h1>
+        <span class="emoji-header" style="text-align:center;">🔒</span>
+        <h1>Gizlilik Politikası</h1>
         
-        <p><strong>Weddistant</strong> ("Uygulama"), kullanıcılarının gizlilik haklarına saygı duyar ve 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca veri sorumlusu sıfatıyla hareket eder. Bu metin, hangi verileri ne amaçla işlediğimizi açıklamaktadır.</p>
+        <p><strong>Weddistant</strong> olarak, en özel gününüze hazırlanırken bize duyduğunuz güvenin farkındayız. 6698 sayılı KVKK uyarınca, verilerinizin güvenliğini "sihirli planlarınız" kadar hassasiyetle koruyoruz.</p>
         
-        <h2><span class="emoji">🆔</span> Veri Sorumlusu ve İletişim</h2>
-        <p>Verileriniz, Weddistant yönetim ekibi tarafından işlenmektedir. Her türlü soru ve talebiniz için <strong>evlilikapp@gmail.com</strong> adresi üzerinden bizimle iletişime geçebilirsiniz.</p>
+        <h2>Veri Sorumlusu ve İletişim</h2>
+        <p>Kişisel verileriniz Weddistant ekibi tarafından işlenir. Bize her zaman <strong>evlilikapp@gmail.com</strong> üzerinden ulaşabilirsiniz.</p>
 
-        <h2><span class="emoji">👤</span> İşlenen Kişisel Verileriniz</h2>
+        <h2>İşlenen Kişisel Veriler</h2>
         <ul>
-            <li><strong>Kimlik ve İletişim:</strong> Adınız, e-posta adresiniz.</li>
-            <li><strong>Uygulama Verileri:</strong> Eş adı, etkinlik tarihleri, şehir bilgisi, bütçe kayıtları ve checklist maddeleri.</li>
-            <li><strong>Cihaz ve Erişim:</strong> Kamera ve Galeri erişimi (yalnızca profil fotoğrafı ve içerik yükleme için kullanıcı onayıyla).</li>
+            <li><strong>Kimlik:</strong> Adınız ve tercihinize bağlı olarak eşinizin adı.</li>
+            <li><strong>İletişim:</strong> E-posta adresiniz.</li>
+            <li><strong>Planlama:</strong> Etkinlik tarihi, şehir bilgisi, bütçe ve görev listeleri.</li>
+            <li><strong>Medya:</strong> Kendi isteğinizle yüklediğiniz profil fotoğrafları.</li>
         </ul>
 
-        <h2><span class="emoji">⚙️</span> Veri İşleme Amaçları ve Hukuki Sebep</h2>
-        <p>Verileriniz, KVKK Madde 5/2-c uyarınca "bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması" hukuki sebebine dayanarak şu amaçlarla işlenir:</p>
-        <ul>
-            <li>Uygulama özelliklerinin (planlama, bütçe, checklist) sunulması.</li>
-            <li>Hava durumu tahminlerinin bölgenize özel sunulması.</li>
-            <li>Hesap güvenliğinin sağlanması ve teknik destek süreçlerinin yönetilmesi.</li>
-        </ul>
+        <h2>Veri Aktarımı ve Bulut Güvenliği</h2>
+        <p>Verileriniz asla satılmaz. Hizmetin aksamaması için dünya standartlarında güvenlik sunan bulut altyapıları (Supabase/Google) kullanılmaktadır. Bu süreçte verileriniz şifrelenmiş olarak saklanır.</p>
 
-        <h2><span class="emoji">🌍</span> Verilerin Aktarılması</h2>
-        <p>Kişisel verileriniz, reklam veya pazarlama amacıyla asla üçüncü taraflara satılmaz. Ancak; uygulamanın teknik altyapısının sağlanması amacıyla güvenli bulut sunucu hizmet sağlayıcıları (Supabase/Google) ile sınırlı ve gizlilik protokolleri dahilinde paylaşılabilir. Sunucuların yurt dışında bulunması sebebiyle bu durum "Yurt Dışına Veri Aktarımı" kapsamında değerlendirilebilir.</p>
-
-        <h2><span class="emoji">📸</span> Kamera ve Galeri İzinleri</h2>
-        <p>Kamera ve galeri izinleri yalnızca kullanıcı tarafından bir dosya seçildiğinde veya fotoğraf çekildiğinde anlık olarak aktifleşir. Uygulama arka planda izinsiz görüntü almaz veya medya içeriklerini taramaz.</p>
-
-        <h2><span class="emoji">🍪</span> Çerezler ve Yerel Depolama</h2>
-        <p>Weddistant, yalnızca oturum yönetimi ve kullanıcı tercihlerini hatırlamak amacıyla cihazınızın yerel depolama (Local Storage) birimini kullanır. Reklam amaçlı takip çerezleri kullanılmamaktadır.</p>
-
-        <h2><span class="emoji">🗑️</span> Veri Sahibi Hakları ve Hesap Silme</h2>
-        <p>KVKK Madde 11 uyarınca; verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini isteme veya silinmesini talep etme hakkınız vardır. </p>
-        <ul>
-            <li><strong>Otomatik Silme:</strong> Uygulama içindeki "Hesabımı Sil" butonu ile tüm verilerinizi anında yok edebilirsiniz.</li>
-            <li><strong>Manuel Talep:</strong> Aşağıdaki buton aracılığıyla bize ulaşarak verilerinizin imha edilmesini isteyebilirsiniz.</li>
-        </ul>
-
-        <a href="mailto:evlilikapp@gmail.com?subject=Hesap Silme Talebi&body=Merhaba, Weddistant üzerindeki hesabımın ve ilişkili tüm verilerimin kalıcı olarak silinmesini talep ediyorum. Kayıtlı E-posta Adresim: " class="delete-btn">
-            🗑️ Hesabımı ve Verilerimi Sil
-        </a>
-
-        <div class="note">
-            <strong>İmha Süreci:</strong> Silme talebi iletildiğinde, hesabınıza bağlı tüm bütçe, planlama ve kimlik verileri 7 iş günü içerisinde geri döndürülemeyecek şekilde sunucularımızdan silinir.
+        <div class="delete-section">
+            <h3>Hesap ve Veri Silme</h3>
+            <p>Kontrol her zaman sizde. Hesabınızı uygulama içinden anında silebilir veya aşağıdaki butonla talepte bulunabilirsiniz.</p>
+            <a href="mailto:evlilikapp@gmail.com?subject=Hesap Silme Talebi" class="delete-btn">🗑️ Verilerimi Kalıcı Olarak Sil</a>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #888;">*Talebiniz 7 iş günü içinde işleme alınarak tüm verileriniz imha edilir.</p>
         </div>
 
         <div class="footer">
-            Son Güncelleme: Mart 2026<br>
-            &copy; 2026 Weddistant. Tüm hakları saklıdır.
+            &copy; 2026 Weddistant — Mutlulukla planlayın.
         </div>
     </div>
 </body>
-
+</html>
