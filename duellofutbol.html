@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Düello: 3-2-1</title>
+    <!-- Modern ve dijital bir görünüm için Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- İkonlar için FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --neon-green: #39ff14;
+            --neon-red: #ff073a;
+            --text-light: #f4f4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Neon Metin Efektleri */
+        .neon-text-green {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
+        }
+
+        .neon-text-red {
+            color: #fff;
+            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
+        }
+
+        /* Bölüm Ayarları */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Kahraman (Hero) Alanı */
+        .hero {
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            color: #aaaaaa;
+            margin-bottom: 3rem;
+        }
+
+        /* Bilgi Kartları Alanı */
+        .info-section {
+            background-color: #111;
+            padding: 5rem 2rem;
+        }
+
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1000px;
+            justify-content: center;
+        }
+
+        .info-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 2rem;
+            flex: 1 1 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+            border-color: var(--neon-green);
+        }
+
+        .info-card i {
+            font-size: 3rem;
+            color: var(--neon-green);
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .info-card p {
+            font-size: 1.2rem;
+            color: #888;
+        }
+
+        /* İndirme Linkleri (Fancy Butonlar) */
+        .download-section {
+            min-height: 60vh;
+        }
+
+        .download-title {
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .store-buttons {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .store-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: #fff;
+            background: #000;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        /* App Store Butonu Neon Efekti */
+        .store-btn.apple {
+            border-color: #555;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+        .store-btn.apple:hover {
+            border-color: #fff;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* Play Store Butonu Neon Efekti */
+        .store-btn.google {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+        }
+        .store-btn.google:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
+            transform: scale(1.05);
+            color: var(--neon-green);
+        }
+
+        .store-btn i {
+            font-size: 2rem;
+        }
+
+        /* Footer ve İletişim */
+        footer {
+            background-color: #050505;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .contact-info h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 2rem;
+        }
+
+        .email-link {
+            display: inline-block;
+            color: var(--neon-green);
+            font-size: 1.5rem;
+            text-decoration: none;
+            border: 1px solid var(--neon-green);
+            padding: 0.5rem 2rem;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .email-link:hover {
+            background-color: var(--neon-green);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-green);
+        }
+
+        .developer-credit {
+            margin-top: 3rem;
+            color: #555;
+            font-size: 1rem;
+        }
+        
+        .developer-credit span {
+            color: #888;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero / Ana Giriş Bölümü -->
+    <section class="hero">
+        <h1 class="neon-text-green">Futbol Düello</h1>
+        <h2 class="neon-text-red">3 - 2 - 1</h2>
+        <p>Dünyanın en hızlı futbol bilgi yarışmasına hazır mısın? Arkadaşına meydan oku veya rastgele bir rakiple eşleş. İki takımı belirle, ortak futbolcuyu ilk yazan sen ol!</p>
+    </section>
+
+    <!-- İşlev ve Amaç Bölümü -->
+    <section class="info-section">
+        <div class="info-container">
+            <!-- Kart 1: İşlev -->
+            <div class="info-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Nasıl Oynanır?</h3>
+                <p>Rakibinle eşleş, 3-2-1 geri sayımını bekle. Herkes birer takım yazar. Ekranda beliren iki takımda da forma giymiş ortak futbolcuyu saniyeler içinde ilk yazan turu kazanır. "Best of 5" formatında 3 turu alan şampiyon olur.</p>
+            </div>
+            
+            <!-- Kart 2: Modlar -->
+            <div class="info-card">
+                <i class="fa-solid fa-user-group"></i>
+                <h3>Oyun Modları</h3>
+                <p>İster sistem üzerinden rastgele bir rakiple eşleşerek küresel liderlik tablosunda yüksel, ister sana özel üretilen davet kodunu arkadaşına gönderip kozlarınızı özel odada paylaşın.</p>
+            </div>
+
+            <!-- Kart 3: Amaç -->
+            <div class="info-card">
+                <i class="fa-solid fa-trophy"></i>
+                <h3>Neyi Amaçlıyoruz?</h3>
+                <p>Sıkıcı ve uzun menülü menajerlik oyunlarının aksine; saf rekabeti, adrenalini ve futbol hafızasını milisaniyelerle yarıştıran, tamamen hız odaklı yeni nesil bir mobil e-spor deneyimi yaratmak.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- İndirme Linkleri Bölümü -->
+    <section class="download-section">
+        <h2 class="download-title neon-text-green">Sahaya İnme Vakti</h2>
+        <div class="store-buttons">
+            <a href="#" class="store-btn apple">
+                <i class="fa-brands fa-apple"></i>
+                <div>
+                    <span style="font-size: 0.8rem; display: block; line-height: 1;">Download on the</span>
+                    App Store
+                </div>
+            </a>
+            
+            <a href="#" class="store-btn google">
+                <i class="fa-brands fa-google-play"></i>
+                <div>
+                    <span style="font-size: 0.8rem; display: block; line-height: 1;">GET IT ON</span>
+                    Google Play
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer / İletişim Bölümü -->
+    <footer>
+        <div class="contact-info">
+            <h3 class="neon-text-red">Bize Ulaşın</h3>
+            <p>Geri bildirimleriniz, işbirlikleri veya destek talepleri için buradayız.</p>
+            <a href="mailto:sayginelgun@gmail.com" class="email-link">
+                <i class="fa-solid fa-envelope"></i> sayginelgun@gmail.com
+            </a>
+        </div>
+        <div class="developer-credit">
+            © 2026 Futbol Düello. Bağımsız bir <span>Gözde</span> girişimidir. Tüm hakları saklıdır.
+        </div>
+    </footer>
+
+</body>
+</html>
